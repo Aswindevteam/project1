@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >UES-40</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning/disinfection</td>
+            <td>Clean and disinfect the UES-40 according to the instructions described in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Exterior of UES-40</td>
+            <td>Inspect the UES-40 exterior for noticeable scratches, grime, and/or deformation that may affect the functionality</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Power-on operation check</td>
+            <td>The software ROM version number is indicated on the Bipolar output setting indicator.<br>The front-panel LEDs must remain fully illumiated for approximately 3 seconds.<br>A low tone sounds, followed by high tone. </td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Fan operation</td>
+            <td>The UPHF40OT00/01U (oscillation-board) fan must revolve.<br>The converter fan must also revolve.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Panel switch check</td>
+            <td>A tone must e sounded when each switch is pressed.<br>When the switches for each type of mode are pressed, the corresponding LEDs must be illuminated and extinguished properly.<br>When each output control switch (▲/▼) is pressed, the corresponding digit of the 7-segment LED must increase or decrease.<br>When the Foot-switch select switch is pressed, the corresponding LED toggles between functions.<br>When the select or Memory switches are pressed, the corresponding 7-segment LEDs must be displayed accordingly.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Single type patient plate detection check</td>
+            <td>The alarm must be audible.<br>The warning indicator is illuminated and the monopolar coagulation output setting indicator displays the error code "01". </td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>The alarm must be audible.<br>The warning indicator is illuminated and the monopolar coagulation output setting indicator displays the error code "01"</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>The volume must change when the volume knob is turned.Both handpiece must be capable of producting cutting and coagulation output.<br><br>The power in Pure mode (output level 150W) must be 120 to 180W.<br><br>The power in Pure mode (output level 150W) must be 120 to 180W.<br><br>The power in Coag 1 mode (output level 60W) must be 48 to 72W.<br><br>The power in Coag 1 mode (output level 120W) must be 96 to 144W.<br><br>The power in Blend mode (output level 125W) must be 100 to 150W.<br><br>The power in Blend mode (output level 250W) must be 200 to 300W<br><br>The power in Coag 2 mode (output level 60W) must be 48 to 72W.<br><br>The power in Coag 2 mode (output level 120W) must be 96 to 144W.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Power measurements under a 200Ω standard load(for monopolar mode)</td>
+            <td>The MAJ-1258 coagulation pedal must be capable of producting output<br><br>The power in Spray mode (output level 60W) must be 48 to 72W.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>Power measurements under a 100Ω standard load (for bipolar mode)</td>
+            <td>The MAJ-1258 coagulation pedal must be capable of producting output<br><br>The power in Soft 1 mode (output level 45W) must be 36 to 54W<br><br>The power in Soft 1 mode (output level 90W) must be 72 to 108W.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">11</th>
+          <td>Power measurements under a 100Ω standard load (for saline mode)</td>
+          <td>The UES-40 must automatically switch to saline mode when a cord is plugged into the saline port.<br>If open output is continued, the alarm must sound and the error message "02" must be displayed on the monopolar coagulation output setting.<br>The MAJ-1258 cut pedal must be capable of producing output.<br><br>The power in Blend mode (output level 160W) must be 128 to 192W.<br><br>The power in Blend mode (output level 320W) must be 256 to 384W.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

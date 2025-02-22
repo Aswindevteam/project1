@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CF-Q180AL</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Endoscope water tightness condition</td>
+            <td>Perform the leakage test (Check for 30 seconds)</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+          <td>Brush Passage</td>
+          <td>Channel cleaning brush passage</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">3</th>
+          <td>Overall appearance</td>
+          <td>Inspection of the endoscope</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">4</th>
+          <td>Insertion section</td>
+          <td>Inspection of the flexibility adjustment mechanism</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Control section;<br>
+              Angle section</td>
+          <td>Inspection of the bending mechanisms:<br>
+              1. Inspection for smooth operation<br>
+              2. Inspection of the UP/DOWN/RIGHT/LEFT angulation mechanism</td>
+              <td class="text-center">Pass<input type="radio" formControlName="s5a_result" id="s5a_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s5a_result" id="s5a_result_fail" value="Fail"><br>
+                  Pass<input type="radio" formControlName="s5b_result" id="s5b_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s5b_result" id="s5b_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row">6</th>
+          <td>Control section;<br>Suction valve mounting section</td>
+          <td>Attaching the suction valve</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">7</th>
+          <td>Control section;<br>Air/water valve mounting section
+            </td>
+          <td>Attaching the air/water valve</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+          <th class="text-center" scope="row">8</th>
+          <td>Control section;<br>Biopsy valve mounting section
+            </td>
+          <td>Attaching the biopsy valve</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">9</th>
+          <td>Endoscope connector
+            </td>
+          <td>Connection to the light source</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+            <th class="text-center" scope="row" >10</th>
+            <td>Endoscope connector</td>
+            <td>Connection of the water container</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >11</th>
+          <td>Endoscope connector</td>
+          <td>Connection to the videoscope cable</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row" >12</th>
+          <td>Image system</td>
+          <td>Inspection of the endoscopic image</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >13</th>
+          <td>Control section;<br>Switch section
+          </td>
+          <td>Inspection of the remote switches</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >14</th>
+          <td>Air supply system</td>
+          <td>Inspection of the air-feeding function</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">15</th>
+          <td>Water supply system</td>
+          <td>Inspection of the objective lens cleaning function:<br>
+            1. Inspection of the water feeding function<br>
+            2. Inspection of removing the remaining water from the objective lens</td>
+              <td class="text-center">Pass<input type="radio" formControlName="s15a_result" id="s15a_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s15a_result" id="s15a_result_fail" value="Fail"><br>
+                  Pass<input type="radio" formControlName="s15b_result" id="s15b_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s15b_result" id="s15b_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row" >16</th>
+          <td>Suction System</td>
+          <td>Inspection of the suction function</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s16_result" id="s16_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s16_result" id="s16_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >17</th>
+          <td>Auxiliary water system</td>
+          <td>Inspection of the auxiliary water feeding function</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s17_result" id="s17_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s17_result" id="s17_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >18</th>
+          <td>Instrument channel system</td>
+          <td>Inspection of the instrument channel</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s18_result" id="s18_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s18_result" id="s18_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+        <td style="text-align: end;"> <button (click)="setAllPass()" class="btn btn-primary mt-2">Pass All Parameter</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

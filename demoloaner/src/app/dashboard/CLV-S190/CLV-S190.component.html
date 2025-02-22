@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CLV-S190</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>The CLV-S190 must be cleaned and disinfected according to instructions described in the Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Power On</td>
+            <td>1. Confirm that the ventilation grills on the side and rear panels of the light source are not covered with dust or other materials.<br>2. Confirm that the lamp cover is attached firmly.<br>3. Press the power switch of the light source.<br>4. Confirm that the power indicator lights up.<br> 5. Confirm that the emergency lamp inductor on the control panel is not lighting or blinking.<br>6. Confirm that air is exhausted by holding your hand in front of the ventilation grills onthe rear panel.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>light</td>
+            <td>1. Press the lamp button if the examination lamp is in standby and confirm that the lamp indicator “ON” lights up.<br>2. Confirm that the examination light is emitted from the distal end of the endoscope.When the lamp light intensity decrease even if the “500 h” indicator does not light up,replace the examination lamp with a new one as described.<br>3. Press and hold the lamp button for about 1 second: the lamp indicator “STBY” lights up.<br>4. Confirm that the examination light is not emitted from the distal end of the endoscope</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"><br>
+                    </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Brightness mode switching function</td>
+            <td>1. Confirm that the brightness mode button lights up.<br>2. Press the brightness mode button on the control panel and confirm that each press switches the brightness mode indicators between “AUTO” and “MANU”.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Automatic brightness adjustment</td>
+            <td>1. Confirm that the endoscope is connected to the light source and the video system center, and that both are turned ON.<br>2. Press the lamp button on the control panel: the examination lamp is ignited.<br>3. Press the brightness mode button and select “AUTO”.<br>4. Point the distal end of the endoscope at a suitable object and vary the distance between 5 and 60 mm. Confirm that the light being emitted from the distal end varies with the distance.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Manual brightness adjustment</td>
+            <td>1. Press the lamp button on the control panel: the examination lamp is ignited.<br>2. Press the brightness mode button and select “MANU”.<br>3. Press the brightness buttons (“–” or “+”) andconfirm the following:<br>• Each time either of the brightness buttons is pressed, a beep is heard and the brightness level increases or decreases accordingly. The brightness indicator also increases or decreases.<br>• When either of the brightness buttons is pressed continuously, successive beeps are heard and the brightness indicator increases or decreases continuously.<br>• The brightness of the light emitted from the distal end of the endoscope increases or decreases according to the brightness level.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>Optical-digital observation function</td>
+          <td>1. Confirm that the observation mode selection indicators show the available opticaldigital observation modes.<br>2. Press the observation mode button on the front panel to light up the observation mode indicator “ON”. Confirm that the endoscopic image is displayed in the opticaldigital observation indicated by the observation mode selection indicator.<br>3. Press the observation mode button. The observation mode indicator “STBY” lights up,and the instrument returns to the normal light observation mode</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>High intensity mode</td>
+            <td>1. Press the brightness mode button on the control panel and confirm that the “MANU”indicator lights up.<br>2. Press the brightness buttons on the control panel to set the brightness level to 0.<br>3. Press the intensity mode button on the control panel: the normal mode is changed to high intensity mode.<br>4. Confirm that the high intensity mode indicator lights up and that the light emitted from the endoscope’s distal end increases compared to the normal mode.<br>5. Press the intensity mode button to switch to the normal intensity mode.<br>6. Confirm that the high intensity mode indicator goes out and the light emitted from the endoscope’s distal end decreases compared to the high intensity mode.<br>7. Press the brightness mode button and confirm that the “AUTO” indicator lights up.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

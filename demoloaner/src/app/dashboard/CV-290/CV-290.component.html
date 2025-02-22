@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CV-290</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning/disinfection</td>
+            <td>Clean and disinfect the CV-290 according to the instructions described in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Power Lamp</td>
+            <td>Press the power switch and verify that the power indicator lights up.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Cooling Fan</td>
+            <td>Cover the ventilation with hand and verify that ventilation is normal.</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Light Emission</td>
+            <td>Turn on jigs, inspect that light is emitted from the distal end</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Monitor Screen</td>
+          <td>Verify that endoscope image displayed on monitor screen.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+            <th class="text-center" scope="row">6</th>
+            <td>Auto-Brightness</td>
+            <td>Verify that the auto-brightness mode( IRIS mode indicator) is "AUTO" and the brightness level setting is "0".<br>Place the gloved palm over the distal end. move the palm at distance between 1 and 3 cm from the distal end.<br>The brightness of the palm image on the monitor screen is consistent.<br>A light intensity of light emitted from the distal end changes on according to the level setting.<br>Place a gloved palm over of the distal end at a distance of approximately 3 cm.<br> Cover the distal end and palm with cloth, press the brightness adjustment button on the light source.<br>Verify that the brightness of the palm images display on the monitor changes according to level setting.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >7</th>
+            <td>Display Contents </td>
+            <td>Inspect that all the alphanumeric character information is displayed correctly.<br>Inspect that the date is correct and time is correctly displayed up to minutes. <br>Inspect that memory capacity counter and CVP counter are displayed according to connected equipment.<br>Display the palm on the monitor with the distal end. inspect that the endoscope image is displayed in normal color without noise.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >8</th>
+          <td>Freeze Function</td>
+          <td>On the keyboard, press the FREEZE key or a custom switch assigned with the FREEZE function. Inspect that the endoscope image freeze with short beep.<br>Press the FREEZE key or custom switch again. Inspect that the frozen image returns to the live image.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Release Function </td>
+            <td>On the keyboard, press the RELEASE key or custom switch assigned to the RELEASE function. Inspect that the beep sounds and the endoscope image freeze in very short time,then returns to the live image.<br>Inspect that the image recording device specified as the image recording destination functions.<br>Inspect that counting on the image recording device counter increase each time the RELEASE function is activated.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>PIP, POP</td>
+            <td>Press the PIP/POP ON button on the keyboard. Verified that the image is displayed in PIP mode.Press the PIP/POP mode button, verify that image display mode switches from PIP to POP.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">11</th>
+            <td>Orientation</td>
+            <td>Set orientation to ON, inspect that the image rotated by 180 degrees is displayed on the monitor.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s11_result" id="s11_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">12</th>
+          <td>Custom Switch </td>
+          <td>Inspect the custom switches (Endoscope remote switch, footswitch, front panel custom button, keyboard custom key) function normally according to the assigned functions.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+      </tr>
+      <tr>
+          <th class="text-center" scope="row">13</th>
+          <td>Optical Digital</td>
+          <td>Inspect that the observation mode indicators light up on the front panel of the connected light source according the settings.<br>On the keyboard, press the NBI key or a custom switch assigned with NBI. Inspect that NBI mode is set with NBI displayed at the top right of the endoscope image on the monitor.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail"  value="Fail"></td>
+      </tr>
+      <tr>
+        <th class="text-center" scope="row">14</th>
+        <td>Appearance Check</td>
+        <td>Inspect that the ventilation on the CV-290 is not clogged with dusts and/or foreign objects</td>
+        <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail"  value="Fail"></td>
+    </tr>
+    <tr>
+      <th class="text-center" scope="row">15</th>
+      <td>Power OFF</td>
+      <td>Press the power switch and verify that the CV-290 is turned off and the power indicator extinguishes</td>
+      <td class="text-center">Pass<input type="radio" formControlName="s15_result" id="s15_result_pass" value="Pass">
+          Fail<input type="radio" formControlName="s15_result" id="s15_result_fail"  value="Fail"></td>
+  </tr>
+  <tr>
+    <th class="text-center" scope="row">16</th>
+    <td>Data Delete and Reset</td>
+    <td>Delete and Reset previous data, ie user setting, saved image, patient data etc</td>
+    <td class="text-center">Pass<input type="radio" formControlName="s16_result" id="s16_result_pass" value="Pass">
+        Fail<input type="radio" formControlName="s16_result" id="s16_result_fail"  value="Fail"></td>
+</tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

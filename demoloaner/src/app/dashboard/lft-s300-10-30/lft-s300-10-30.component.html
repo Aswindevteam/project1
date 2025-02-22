@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >LTF-S300-10-3D</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Endoscope water tightness condition</td>
+            <td>Perform the leakage test (Check for 30 seconds)</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Overall appearance</td>
+            <td>Inspection of the endoscope</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Control section;<br>
+                Angle section</td>
+            <td>Inspection of the bending mechanisms:<br>1. Inspection for smooth operation<br>2. Inspection of Angulation lock in free position.<br>3. Inspection of the UP/DOWN and RIGHT/LEFT angulation mechanism</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">4</th>
+          <td>Image system</td>
+            <td>Inspection of the endoscopic image</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Control section;<br>
+              switch system</td>
+            <td>Inspection of the remote switches</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Insertion tube</td>
+            <td>Inspection of the insertion tube into the flexible trocar</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >USG-410</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Power verification(Check the illumination of power switch)</td>
+            <td>Power verification(Check the illumination of power switch)</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+          <td>Power verification(Check the start screen and staet tone)</td>
+          <td>Power verification(Check the start screen and staet tone)</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">3-1</th>
+          <td>Inspection of the power supplyVerification of THUNDERBEAT or SONICBEAT instrument connection(s)(Connection of the THUNDERBEAT or SONICBEAT instrument)<br><br>-connection the THUNDERBEAT/SONICBEAT instrument to ultrasonic bipolar generator</td>
+          <td>Verification of THUNDERBEAT or SONICBEAT instrument connection(s)(Connection of the THUNDERBEAT or SONICBEAT instrument)<br>-connection the THUNDERBEAT/SONICBEAT instrument to ultrasonic bipolar generator</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">3-2</th>
+          <td>Verification of THUNDERBEAT or SONICBEAT instrument connection(s)(Connection of the THUNDERBEAT or SONICBEAT instrument)<br><br>-Disconnecting the THUNDERBEAT and SONICBEAT instrument</td>
+          <td>Verification of THUNDERBEAT or SONICBEAT instrument connection(s) (Connection of the THUNDERBEAT or SONICBEAT instrument)<br><br>-Disconnecting the THUNDERBEAT and SONICBEAT instrument </td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">4</th>
+          <td>Verification of touchscreen (When either THUNDERBEAT or SONICBEAT instrument is connected )</td>
+          <td>Verification of touch screen (When either THUNDERBEAT or SONICBEAT instrument is connected )</td>
+              <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"><br></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Verification of the foot switch connection(Check the illumination of footswitch indicator(s))</td>
+          <td>Verification of the foot switch connection(Check the illumination of footswitch indicator(s))</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">6</th>
+          <td>Verification of the footswitch connection(Footswitch operation check)</td>
+          <td>Verification of the foot switch connection(Footswitch operation check)</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+          <th class="text-center" scope="row">7-1</th>
+          <td>Verification of the foot switch connection (Verification of the ultrasonic output)</td>
+          <td>1. Press the “FREEZE” key on the keyboard or the custom switch to which the “FREEZE” function is assigned to confirm that the live endoscopic image freezes and a short beep is heard.<br>2. Press the “FREEZE” key or the custom switch to which the “FREEZE” function is assigned again to confirm that the frozen image returns to the live image.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">7-2</th>
+          <td>Verification of the foot switch connection (Verification of the ultrasonic output)</td>
+          <td>Verification of the foot switch connection (Verification of the ultrasonic output)</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+            <th class="text-center" scope="row" >8-1</th>
+            <td>Verification of the hifgfrequency(RF-bipolar)output(when using the THUNDERBEAT instrument)( verify the output level)</td>
+            <td>Verification of the hifg-frequency(RF-bipolar) output(when using the THUNDERBEAT instrument)( verify the output level)</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >8-2</th>
+          <td>Verification of the high frequency(RF-bipolar) output(when using the THUNDERBEAT instrument)( verify the output level)</td>
+          <td>Verification of the hifg-frequency(RF-bipolar) output(when using the THUNDERBEAT instrument)( verify the output level)</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row" >9</th>
+          <td>Verification of the high flow insuffalation unit</td>
+          <td>Verification of the high flow insuffalation unit</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >10</th>
+          <td>Verification of the alarm system</td>
+          <td>Verification of the alarm system</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >11</th>
+          <td>Procedure after verification</td>
+          <td>Procedure after verification</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

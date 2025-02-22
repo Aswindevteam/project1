@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >OTV-S400</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning/disinfection</td>
+            <td>The OTV-S400 must be cleaned and disinfected according to instruction described in the instruction manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Connection</td>
+            <td>With the power of the OTV-S400 OFF, Verify that the electrical contacts in the video connector for the OTV-S400 has no damages.<br>- Connect the video connector for the camera head to the OTV-S400 all the way.<br>Inspect the following items:<br>・ The camera head is securely connected to the OTV-S400 with the video connector.<br>・ A click sounds when the video connected is inserted all the way</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Power ON</td>
+            <td>Verify that the air vents on the chassis and rear panel of the OTV-S400 are not clogged with dusts and/or foreign substances.<br>- Press the power switch on the OTV-S400.<br>- Verify that the power indicator lights up.<br>- Place a hand in front of the air vents on the rear panel.<br>- Verify by feeling that the air is exhausted from the air vents</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Monitor screen</td>
+            <td>Connect the rigid telescope to the CLV-S400 with the light guide cable.<br>- Connect the rigid telescope to the camera head.<br>- Turn ON the light source and press the LAMP button on the light source.<br>- Verify that the data display setting is ON.<br>- Place a gloved palm over the distal end. <br>Inspect the following items:<br>・ The palm image displayed on the monitor is normal.<br>・ The status indicators are displayed on the upper left of the monitor</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>White balance adjustment</td>
+            <td>Insert the distal end into the white cap.<br>- Press the White balance button on the touch panel for one second.<br>Inspect the following items:<br>・ Verify that the status indicator of the White balance on the touch panel changes from Incomplete to Complete.<br>・ A Complete message appears on the monitor.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Auto-brightness adjustment</td>
+            <td>Press the brightness mode button to set brightness mode to AUTO.<br>- Press the brightness adjustment button (“+” or “-“) to set the brightness level to “0.”<br>- Point the distal end toward an object. Move the distal end closer to the object and then away from it within a distance of 5 to 60 mm.<br>- Verify that the brightness of the endoscope image on the monitor is normal.<br>- Hold the distal end at a distance of 30 to 40 mm from the object.<br>- Press the brightness adjustment buttons (“+” and “-“). Inspect the following items:<br>・ When either of the brightness buttons is pressed, a beep sounds and the brightness increases or decreases.<br>・ When either of the buttons is pressed continuously, a beep sounds and the brightness indicator changes in a continuous manner.<br>- Verify that the light illuminated from the distal end increases or decreases according to the brightness setting.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>One-touch auto focus</td>
+          <td>Move the distal end near to a gloved palm and press the one-touch auto focus switch on the camera head.<br>- Verify that the image on the monitor is automatically focused.<br>- Move the distal end away from the palm and press the one-touch auto focus switch.<br>- Verify that the image on the monitor is automatically focused.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>RELEASE</td>
+            <td>Press the Observation tab on the touch panel.<br>- On the Observation/Record window, press the Execute button for RELEASE1.<br>- Verify that a beep sounds and the endoscope image freezes in a very short time, then returns to the live image.<br>- Press the Execute button for RELEASE2.<br>- Verify that a beep sounds and the endoscope image freezes in a very short time, then returns to the live image</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Custom switches</td>
+            <td>Press the Info tab on the touch panel. The Information display window appears.<br>- Press the Scope information button on the touch panel. The Switch Information window appears on the monitor.<br>- Press SW1, SW2, and SW3 on the camera head. Verify that the pressed switch is highlighted in blue in the Switch Information window.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>NBI observation function</td>
+            <td>Press the Observation tab on the touch panel. The Observation/Record window appears.<br>- Press the Pull-down key for the Observation mode and select NBI.<br>- Verify that the NBI icon appears in the status indicator on the monitor and touch panel.<br>- Press the Pull-down key for the Observation mode and select WLI.<br>- Verify that observation mode returns to WLI.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">11</th>
+          <td>Power OFF</td>
+          <td>Press the power switch on the OTV-S400.<br>- Verify that the OTV-S400 is turned off and the power indicator for the power switch extinguishes</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+      <tr>
+          <th class="text-center" scope="row">12</th>
+          <td>Data Delete and Reset</td>
+          <td>Delete and Reset previous data, ie user setting, saved image, patient data etc</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail"  value="Fail"></td>
+      </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

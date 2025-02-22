@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CV-1500</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Inspection of Power Supply</td>
+            <td>1. Confirm that the ventillation grilles are not covered with dust or other material.<br>2. Press the Power switch of the video system center. The power indicator lights up.<br>3. Confirm that the air is exhausted by holding your hand in front of the ventillation grilles</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Inserting the portable memory</td>
+            <td>1. Confirm that the portable memory is inserted into the portable memory port until it stops.<br>2. The portable memory access indicator on the front panel is blinking.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>All reset operation</td>
+            <td>In this operation, delete all setting and images and put the video system center in the state at the time of delivery.STEPS:<br>1. Tap the "Reset all" button on Maintenance page 2/2.<br>2. Tap the "Yes" button.<br>3. Turn OFF this instrument. </td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Inspection of the monitor display</td>
+            <td>1. Confirm that the necessary information are displayed on the monitor.<br>2. Confirm that the data and time are correct.<br>3. Confirm that the counter of connected devices such as digital filing system are displayed</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Inspection of the endoscopic image</td>
+            <td>Check and confirm endoscopic image as per inspection manual.<br>Confirm that the endoscopic image is free from noise, blur, fog, or other irregularities.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Inspection of the brightness adjustment function</td>
+            <td>1. If the examination light is not emitted, tap the "Lamp" button on Home > Basic functions.Confirm that the examination light is emitted from the distal end of endoscope.<br>2. Changing the distance between 5 to 60 mm, and confirm that the brightness of the endoscopic image which displayed on the monitor is constant.<br>3. After fixed the distance between the distal end of the endoscope and object, tap the plus/minus button of the "Brightness [Auto]" on Home > Function list > Bright/Color >Brightness 1 tab, and adjust the brightness of the endoscopic image which displayed on monitor will change correspond to this instruction.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>Inspection of the freeze function</td>
+          <td>1. Tap either "Freeze" button on Home > Function list > Observ. > Observation1 tab to switch the status of the "Freeze".<br>2. Confirm that the beep is heard, and the live endoscopic image freezes.<br>3. Tap the "Freeze" button while freezing the live endoscopic image.<br>4. Confirm that the image returns to the live image.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>Inspection of release fucntion</td>
+            <td>1. Tap either "Release1" or "Release2" button on Home > Function list > Record > Still image tab.<br>2. A beep will be heard, and the endoscopic image freezes for a short time. After that confirm the image will return to the live image.<br>3. Confirm that the counter of recording destination which displayed on the monitor is increased.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Inspection of the PIP,POP function</td>
+            <td>PIP Fuction:-<br>1. Tap the "PIP" button on Home > Function list > Info > PIP/POP tab.<br>2. Confirm that the PIP sub screen is displayed on the monitor.<br><br>POP Fuction:-<br>1. Tap the "POP" button on Home > Function list > Info > PIP/POP tab.<br>2. Confirm that the POP image is displayed on the monitor.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>Inspection of the Switch information</td>
+            <td>1. Tap the "Switch information" button on Home > Function list > Info. > Information1 tab to switch the status of the " Switch information".<br>2. Confirm the assigned function of custom switches.<br>3. With switch infirmation shown on the monitor, press one of the remote switches (SW1 to SW5). Confirm that the assignment information in the switch information is highlighted.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">11</th>
+          <td>Inspection of the Optical -digital observation function</td>
+          <td>1. Tap the available observation mode button on Home > Function list > Observ. >Observation1 tab.<br>2. Upper-right of monitor is displayed icon of each observation mode. Confirm that the endoscopic image is change to selected observation mode.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+      <tr>
+          <th class="text-center" scope="row">12</th>
+          <td>Inspection of the air/water feeding function</td>
+          <td>1. Tap the "Air flow" button on Home > Function list > Pump/peripheral > Pump tab to switch the status of the "Air flow".<br>2. The status of the "Air flow" is switched and displayed on the "Air flow" button.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail"  value="Fail"></td>
+      </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

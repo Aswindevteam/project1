@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >USG-400</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning/disinfection</td>
+            <td>The USG-400 must be cleaned and disinfected according to instruction described in the instruction manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Exterior of USG-400</td>
+            <td>Inspect the USG-400 exterior for noticeable scratches, grime and/or deformation that may affect the functionality.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Power On</td>
+            <td>Turn on the main unit and inspect the following items:<br>-LED around the power switch lights up in green.<br>-The touch-screen lights up.<br>-The push buttons light up.<br>-The start screen is displayed for 3 seconds on the touch-screen.<br>-When the start screen appears, a start tone sounds simultaneously.<br>-Following the start screen, the set screen or main screen appears</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Connection with the ESG400 with communication cable.</td>
+            <td>1- Connect the USG-400 and ESG-400 with a communication cable. turn on the ESG-400 verify that the communication indicator on the USG-400 is illuminated and connection with ESG-400 is successful.<br>2- Connect both ends of the communication cable to the LINK-IN and LINK-OUT on the USG-400 rear panel, respectively.Verify that error code U503 ( System connection error) appears</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Touch Panel</td>
+            <td>1- When THUNDERBEAT or SONICBEAT is connected, inspect the following items with displayed screen: set screen:<br>-Press the plus button, verify that the output level increases.<br>-Press the minus button, verify that the output level decreases.<br>-Press and hold the plus or minus button, verify that the output level changes subsequently.<br>-Press the return button, Verify that the display changes from set screen to main screen.<br>2- When both THUNDERBEAT or SONICBEAT are connected, inspect the following items with displayed screen:<br>Main screen:<br>-Press the THUNDERBEAT or SONICBEAT button. Verify that the display changes from main screen to set screen.<br>-Press the plus button. Verify that the output level increases.<br>-Press the minus button. Verify that the output level decreases.<br>-Press the return button. Verify that the display changes from set screen to main screen.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Push Buttons Operation</td>
+            <td>Press the probe check push button.<br>Verify that the main screen displays the confirmation window (probe check). <br>Press the cancel button on the left bottom of the screen. Verify that the confirmation window (probe check) disappears and display returns to the main screen.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>High Frequency ( RF BIPOLAR ) Output</td>
+          <td>Preparation<br>- Prepare a container (such as a bowl) with saline.<br>- Open the THUNDERBEAT grasping section. Submerge only the half end of the grasping section ( different color area) and the probe tip in saline.<br>- Press and hold the seal button (blue) of the hand switch or seal pedal ( right padel:blue) of the footswitch.<br>- Verify that high-frequency ( RF bipolar) output is activated.<br>- Verify that the activation in set screen or all screen is displayed on the touchscreen.<br>- Verify that output tone sounds from ESG-400.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>Footswitch Connection</td>
+            <td>Connect the footswitches verify that the two footswitch indicators illuminate on the USG-400 touch screen.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Alarm System</td>
+            <td>Prior to inspection of the alarm system, verify that the transducer is unplugged from the USG-400. <br>Press and hold the THUNDERBEAT or SONICBEAT handswitch and connect the transducer to the usg-400 :<br>Verify that the error window (U501:Handswitch error screen) appears on the touch screen and an alarm tone sounds. Release the THUNDERBEAT or SONICBEAT handswitch, verify that the error tone stops and a message"error has been resolved"appears on the handswitch error window press the OK switch. Verify that the error is cleared and the error window disappears.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>Exterior/Labeling</td>
+            <td>Inspect following items:<br>-After pressing the "MENU" push button, tap the "NEXT" button at the button of the "SELECT MENU" screen.<br>-Tap the "software version" button on the screen and check the "software version".<br>-By visual inspection, ensure that are no problems on exterior/labeling.<br>-Check the apparent condition stuck ITM label by visual inspection.(In case of software version is 2.00 or later)<br>-Visually check that label and marking on the main body can be clearly read.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">11</th>
+          <td>Power Off</td>
+          <td>Turn off The usg-400<br>If ESG-400 is also connected, turn off the ESG-400 as well.<br>Inspect the following items:<br>-LEDs around switches extinguish.<br>-The touch-screen extinguishes.<br>-The push buttons extinguish.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+      <tr>
+          <th class="text-center" scope="row">12</th>
+          <td>Data Delete and Reset</td>
+          <td>Delete and Reset previous data, ie user setting, patient data etc.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail"  value="Fail"></td>
+      </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >OTV-S190</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning/disinfection</td>
+            <td>Clean and disinfect the OTV-S190 according to the instructions described in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Exterior of OTV-S190</td>
+            <td>Inspect the OTV-S190 exterior for noticeable scratches, grime, and/or deformation that may affect the functionality.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Ventilation</td>
+            <td>Inspect that the ventilation on the OTV-S190 is not clogged with dusts and/or/foreign objects.</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Power lamp</td>
+            <td>Press the Power switch. Verify that the power indicator lights up</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Cooling fan</td>
+          <td>Place a hand over the ventilation on the OTV-S190 and verify that the air is exhausted from the ventilation for cooling.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+            <th class="text-center" scope="row">6</th>
+            <td>Examination light</td>
+            <td>Turn ON the light source. Verify that light is emitted from the endoscope distal end or camera head.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >7</th>
+            <td>Monitor screen</td>
+            <td>Verify that the endoscope image is displayed on the monitor.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >8</th>
+          <td>Auto-brightness</td>
+          <td>1. Verify that the auto-brightness mode (Iris mode indicator) is “”AUTO” and the brightness level is “0” on the front panel of the light source.<br>2. Point the endoscope distal end toward the gloved palm. Move the endoscope distal end closer to the palm and then away from it at the distance between 5 to 60 mm.Inspect the following items:<br>・ The brightness of the palm image on the monitor is consistent.<br>・ A light intensity of the light emitted from the distal end changes according to the level setting.<br>3. Place a gloved palm over of the distal end at a distance of approximately 3 cm.Cover the distal end and palm with a cloth.Press the brightness adjustment button on the light source. Verify that the brightness of the palm image displayed on the monitor changes according to the brightness levelsetting.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Monitor display</td>
+            <td>1. Inspect that all the alphanumeric character information is displayed correctly.<br>2. Inspect that the date is correct and time is displayed up to minutes correctly.<br>3. Connect a portable memory, video printer, and video recorder to the OTV-S190.Inspect that information on a remaining memory capacity, CVP counter, and DF counter are displayed for each of the connected equipment.<br>4. Display the palm on the monitor with thedistal end. Inspect that the endoscope image is displayed in a normal color without noise.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>Freeze</td>
+            <td>On the keyboard, press the FREEZE key or a custom switch assigned with the FREEZE function. Inspect the following items:<br>・ The endoscope image freezes.<br>・ When the FREEAE key or custom switch is pressed again, the frozen image returns to the live image.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">11</th>
+            <td>Release</td>
+            <td>1. On the keyboard, press the RELEASE key or a custom switch assigned with the RELEASE function. Inspect that a beep sounds and the endoscope image freezes in a very short time, then returns to the live image.<br>2. Inspect that the image recording device specified as the image recording destination functions normally.<br>3. Inspect that a value on the image recording device counter increases each time the RELEASE function is activated.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s11_result" id="s11_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">12</th>
+          <td>PIP, PIO</td>
+          <td>Press the PIP/POP ON button on the keyboard. Verify that the image is displayed in PIP mode. Press the PIP/POP mode button. Verify that the image display mode switches from PIP to POP.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+      </tr>
+      <tr>
+          <th class="text-center" scope="row">13</th>
+          <td>Orientation</td>
+          <td>Set Orientation to ON. Inspect that the image rotated by 180 degrees is displayed on the monitor.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail"  value="Fail"></td>
+      </tr>
+      <tr>
+        <th class="text-center" scope="row">14</th>
+        <td>Remote switches</td>
+        <td>Inspect that custom switches (endoscope remote switch, footswitch, front panel custom button, keyboard custom key) function normally according to the assigned functions</td>
+        <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail"  value="Fail"></td>
+    </tr>
+    <tr>
+      <th class="text-center" scope="row">15</th>
+      <td>Optical-digital observation</td>
+      <td>1. Inspect that the observation mode indicators light up on the front panel of the connected light source according the settings.<br>2. On the keyboard, press the NBI key or a custom switch assigned with NBI. Inspect that NBI mode is set with NBI displayed at the top right of the endoscope image on the monitor.</td>
+      <td class="text-center">Pass<input type="radio" formControlName="s15_result" id="s15_result_pass" value="Pass">
+          Fail<input type="radio" formControlName="s15_result" id="s15_result_fail"  value="Fail"></td>
+  </tr>
+  <tr>
+    <th class="text-center" scope="row">16</th>
+    <td>Power OFF</td>
+    <td>Press the Power switch and verify that the OTV-S190 is turned off and the power indicator extinguishes.</td>
+    <td class="text-center">Pass<input type="radio" formControlName="s16_result" id="s16_result_pass" value="Pass">
+        Fail<input type="radio" formControlName="s16_result" id="s16_result_fail"  value="Fail"></td>
+</tr>
+<tr>
+  <th class="text-center" scope="row">17</th>
+  <td>Data Delete and Reset</td>
+  <td>Delete and Reset previous data, ie user setting, saved image, patient data etc.</td>
+  <td class="text-center">Pass<input type="radio" formControlName="s17_result" id="s17_result_pass" value="Pass">
+      Fail<input type="radio" formControlName="s17_result" id="s17_result_fail"  value="Fail"></td>
+</tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CLK-4</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>Cleaning and disinfection of the CLK-4 must be performed according to the Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Power ON</td>
+            <td>Confirm that the lamp cover on the left side of the CLK-4 is closed completely.<br>Press the power switch of CLK-4 to turn on the power.<br>Confirm the following:<br>The green power switch indicator is illuminated.<br>The cooling fan motor starts operating.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Air and water feeding</td>
+            <td>Turn on the air feeding switch, and confirm that a sound is heard. Turn off the switch and confirm that the sound stops.<br>Connect the endoscope to CLK-4.<br>Immerse the distal end of the endoscope in sterile water and turn on the air feeding <br>switch while operating the endoscope’s air feeding function.<br>Confirm the following:<br>Confirm that air bubbles are emitted from the nozzle of the distal end of the endoscope.<br>Remove the distal end of the endoscope from the sterile water and operate the endoscope’s water feeding function.<br>Confirm the following:<br>Confirm that water is emitted from the nozzle of the distal end of the endoscope.</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">4</th>
+          <td>Main Lamp</td>
+          <td>Connect the endoscope to CLK-4. Confirm the following:<br>Press the power switch of the CLK-4 to turn on the power.<br>Confirm that light is emitted from the distal end of the endoscope.<br>Press the power switch of the CLK-4 to turn off the power.<br>Confirm that light from the distal end of the endoscope goes out</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Brightness control</td>
+          <td> Press the power switch of the CLK-4 to turn on the power.<br>Verify that the brightness can be adjusted properly.<br>Confirm the following:<br>Confirm that the brightness increases as you turn the brightness control knob clockwise.<br>Confirm that the brightness decreases as you turn the brightness control knob counterclockwise.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+            <th class="text-center" scope="row">6</th>
+            <td>Turn off the power</td>
+            <td> Press the power switch of the CLK-4.<br>Confirm that the power of the CLK-4 is turned off, and the power switch indicator goes out</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CLV-190</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning/disinfection</td>
+            <td>Clean and disinfect the CLV-190 according to the instructions described in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Power ON</td>
+            <td>Press the power switch and inspect the following items -<br>The power indicator lights up and no abnormal sounds.<br>No emergency lamp indicator on the front panel lights nor blink.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Cooling Fan</td>
+            <td>Place the hand over the ventilation on the back of the CLV-190 and verify that the air is exhausted from the ventilation for cooling.</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Lamp Life</td>
+            <td>Verify that lamp life is not expired.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Examination light on </td>
+            <td>No emergency lamp indicator on the front panel lights nor blinks.The examination light is emitted from the endoscope distal end.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Examination light off</td>
+            <td>The examination lamp extinguishes and the lamp indicator switches to "STBY"(standby)</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>Brightness mode selection function</td>
+          <td>Verify that the brightness mode indicator switches between "AUTO" and "MANUAL".</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>Auto-Brightness</td>
+            <td>With the examination lamp illuminated, press the brightness mode button to switch to "AUTO" point the endoscope distal end towards an object. Move the endoscope distal end closer to the object and then away from it at the distance between 5 to 60 mm. Verify that the brightness of the endoscope image on the monitor is consistent.<br><br>Press the brightness adjustment buttons "- " and "+" inspect the following items:<br>Each time either of the brightness buttons is pressed a beep sounds and the brightness increase & decrease by 1 accordingly.<br>When either of the buttons is pressed continuously, a beep sound and the brightness indicator changes in a continuous manner.<br>The brightness of the light emitted from the endoscope distal end increase ordecrease according to the brightness setting.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Manual brightness</td>
+            <td>With the examination lamp illuminated, press the brightness adjustment buttons "-" and "+" inspect the following items: <br>Each time either of brightness buttons is pressed , a beep sounds and the brightness increase or decrease by 1 accordingly. <br>When either of buttons is pressed continuously, a beep sounds and the brightness indicator changes in a continuous manner.<br>The brightness of light emitted from the endoscope distal end increase or decrease according to the brightness setting.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>Optical-Digital</td>
+            <td>Inspect the observation mode indicator for observation mode that is available for connected videoscope illuminates on the front panel.<br>Press the optical digital observation mode button on the front panel. The observation mode indicator "ON" lights up. verify that display of the endoscope image switches to optical- digital observation mode indication with the observation mode indicator on the front panel.<br>Each time the observation mode select button is pressed, optical-digital observation mode switches accordingly and the corresponding observation mode indicator lights up.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">11</th>
+          <td>Transillumination</td>
+          <td>The transiilumination indicator blinks. The examination light automatically changes to white light with the maximum light intensity for approximately 7 seconds.<br>After 7 seconds transillumination function deactivated, the examination light returns to the original intensity.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+      <tr>
+          <th class="text-center" scope="row">12</th>
+          <td>Air/Water supply</td>
+          <td>The air flow indicator is "ON" lights up. Each time the air supply regulator button is pressed, the air supply regular indicator switches between L(low) ,M(medium) & H(high). </td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail"  value="Fail"></td>
+      </tr>
+      <tr>
+        <th class="text-center" scope="row">13</th>
+        <td>Exterior check</td>
+        <td>Inspect the CLV-190 exterior for noticeable scratches, grim, and/or deformation that may affect the functionality.</td>
+        <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s13_result" id="s13_result_fail"  value="Fail"></td>
+    </tr>
+    <tr>
+      <th class="text-center" scope="row">14</th>
+      <td>Ventilation</td>
+      <td>Inspect that the ventilation on the side and back of the CLV-190 is not clogged with dust and/or/ foreign objects.</td>
+      <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+          Fail<input type="radio" formControlName="s14_result" id="s14_result_fail"  value="Fail"></td>
+  </tr>
+  <tr>
+    <th class="text-center" scope="row">15</th>
+    <td>Power OFF</td>
+    <td>Press the power switch and verify that the CLV-190 is turned off and the power indicator extinguishes.</td>
+    <td class="text-center">Pass<input type="radio" formControlName="s15_result" id="s15_result_pass" value="Pass">
+        Fail<input type="radio" formControlName="s15_result" id="s15_result_fail"  value="Fail"></td>
+</tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

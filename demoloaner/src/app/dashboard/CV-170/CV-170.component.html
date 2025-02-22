@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CV-170</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>Clean and disinfect the CV-170 according to the instructions in the corresponding
+              Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+          <td>170 series,flexible videoscope</td>
+          <td>1. Confirm that the video system center and all connected devices are turned OFF.<br>2. Confirm that the electrical contacts inside the video connector socket of the video system center are not damaged.<br>3. Connect the light guide connector of the videoscope to the output socket of the video system center.<br>4. Push the video connector of the videoscope into the video connector socket of the video system center all the way until it clicks, holding the video system center with a hand so that it will not move.Confirm that the “UP” mark faces upwards.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">3</th>
+          <td>Inspection of the power supply</td>
+          <td>1. Confirm that the ventilation grills on the right side and rear side panels of the video system center are not covered with dust or other materials.<br>2. Press the power switch of the video system center. The power indicator lights up.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">4</th>
+          <td>Inspection of the examination light</td>
+          <td>1. Press the lamp button: the lamp “ON” indicatorlights up.<br>2. Confirm that the examination light is emittedfrom the distal end of the endoscope.<br>3. Press and hold the lamp button for about 1 second: the lamp indicator turns OFF.<br>4. Confirm that the examination light is not emitted from the distal end of the endoscope.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Inspection of the monitor display</td>
+          <td>1. Confirm that the endoscopic image and the characters are displayed on the monitor.Display the characters on the monitor when they are cleared as described.<br>2. Confirm that the date and time are correct.<br>3. Confirm that the memory counter and the CVP counter, etc. is displayed in the endoscopic image screen.<br>4. Confirm that enough space is available on the portable memory or internal buffer of the video system center to store endoscopic images.<br>5. Confirm that the endoscopic image is normal by observing any object such as the palm of your hand.</td>
+              <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"><br></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row">6</th>
+          <td>Inspection of the brightness adjustment Function(Inspection of the automatic brightness adjustment)</td>
+          <td>1. Confirm that the endoscope is connected to the video system center and turn the video system center ON.<br>2. Press the lamp button to ignite the examination lamp.<br>3. Press the brightness mode button to light up the brightness mode indicator.<br>4. Point the distal end of the endoscope at a suitable object and vary the distance between 5 and 60mm. Confirm that brightness of the endoscopic image on the monitor is stable.<br>5. Press the brightness buttons (“-” or “+”) to confirm the following:<br>• Each time either of the brightness buttons is pressed, a beep is heard and the brightness increases or decreases accordingly.<br>• When either of the brightness buttons is pressed continuously, successive beeps are heard and the brightness indicator increases or decreases continuously.<br>• The brightness of the light emitted from the distal end of the endoscope increases or decreases according to the brightness indicator</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">7</th>
+          <td>Inspection of the brightness adjustment Function (Inspection of the manual brightness adjustment)</td>
+          <td>1. Press the lamp button to ignite the examination lamp. <br>2. Confirm that the brightness mode indicator is OFF. When it lights up, press the brightness mode button to turn it OFF.<br>3. Press the brightness buttons (“-” or “+”) to confirm the following:<br>• Each time either of the brightness buttons is pressed, a beep is heard and the brightness increases or decreases accordingly.<br>• When either of the brightness buttons is pressed continuously, successive beeps are heard and the brightness indicator increases or decreases continuously.<br>• The brightness of the light emitted from the distal end of the endoscope increases or decreases according to the brightness indicator.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+          <th class="text-center" scope="row">8</th>
+          <td>Inspection of the freeze function</td>
+          <td>1. Press the “FREEZE” key on the keyboard or the custom switch to which the “FREEZE” function is assigned to confirm that the live endoscopic image freezes and a short beep is heard.<br>2. Press the “FREEZE” key or the custom switch to which the “FREEZE” function is assigned again to confirm that the frozen image returns to the live image.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">9</th>
+          <td>Inspection of the release function</td>
+          <td>1, Press the “RELEASE” key on the keyboard or the custom switch to which the “RELEASE” function is assigned. <br>2. Confirm that a beep is heard, and the live endoscopic image freezes for a short time.Then the image returns to the live image.<br>3. Confirm that the selected recording device is activated.<br>4. Confirm that the counter for the recording devices displayed on the monitor increments by one.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+            <th class="text-center" scope="row" >10</th>
+            <td>Inspection of the orientation function</td>
+            <td>If the orientation function is activated, confirm that the indication on the monitor is an endoscopic image rotated by 180°.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >11</th>
+          <td>Inspection of the custom switches</td>
+          <td>Confirm that the functions assigned to the custom switches (the endoscope’s remote switches, foot switches, custom buttons on the front panel, and custom keys on the keyboard) are operated normally.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row" >12</th>
+          <td>Inspection of the opticaldigital observation Function (Inspection of NBI observation)</td>
+          <td>1 Press the custom switch to which the “NBI” function is assigned or the observation mode select button on the front panel of the video system center.<br>2 Confirm that “NBI” appears at the upper right of the endoscopic image screen, and the observation mode selection indicator shows “ON”.<br>3 Press the custom switch to which the “NBI” function is assigned or the observation mode selection button on the front panel: “NBI” indicated at the upper right of the endoscopic image screen disappears, the observation mode selection indicator on the front panel goes out, and observation mode becomes the normal observation mode.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >13</th>
+          <td>Inspection of air and water feeding</td>
+          <td>1. Press the airflow button repeatedly and confirm that the indication of the airflow regulator indicators light up in the cycle of “L” (low), “H” (high), and OFF. <br>2. Press the airflow button to change the airflow level and confirm that the amount of bubbles from the air/water nozzle changes accordingly.<br>3. Press the airflow button to change the airflow level and confirm that the amount of water from the air/water nozzle changes accordingly.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >14</th>
+          <td>Inspection of power off</td>
+          <td>1. Press the power switch of the video system center.<br>2. Confirm that the video system center is turned off.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">15</th>
+          <td>Data Delete and Reset
+            </td>
+          <td>Delete and Reset previous data, ie user setting, saved image, patient data etc.
+          </td>
+              <td class="text-center">Pass<input type="radio" formControlName="s15_result" id="s15_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s15_result" id="s15_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

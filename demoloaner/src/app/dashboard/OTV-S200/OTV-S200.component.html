@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >OTV-S200</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>Clean and disinfect the OTV-S200 according to the instructions in the corresponding
+              Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+          <td>Checking the Connection of the Video Connector</td>
+          <td>There must be a clicking feel when CH-S200-XZ-EB is connected.<br>CH-S200-XZ-EB must be able to be removed smoothly by pressing the locking lever. The open/close lid must be automatically closed when CH-S200-XZ-EB is removed.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">3</th>
+          <td>Checking the Connection of the Light Guide</td>
+          <td>There must be no irregularity in installing/removing the light guide</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">4</th>
+          <td>Checking the Power Indicator and the Video Signal Output</td>
+          <td>Power cable can be connected. Power indicator lights up.<br>The color bar signals are output from all video signal output terminals of OTV-S200 with no scope connected.<br>The power indicator is turned OFF when the power switch is turned OFF</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Checking Portable Memory Recognition, Examination Light, and Touch Pane</td>
+          <td>The portable memory can be installed/removed without much effort. Light is emitted from the scope distal end.<br>Display area in the touch panel should be all visible.<br>The internal memory access indicator and portable memory access indicator light up in green, blink in orange, and then light up in green again.<br>E310 (Clock error) does not appear on the monitor 3D monitor.</td>
+              <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"><br></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row">6</th>
+          <td>Checking Endoscopic Images</td>
+          <td>White balance can work normally.<br>When the distance from the object changes between five to 60 mm, there is not irregularity in brightness/brightness control.<br>There is no irregularity in endoscopic image resolution.<br>There is no irregularity in endoscopic image color reproduction. There is no abnormal noise in endoscopic image.<br>There is no irregularity in character display.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">7</th>
+          <td>Check of Switching to NBI Mode</td>
+          <td>Switching between the normal light and NBI is possible.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+          <th class="text-center" scope="row">8</th>
+          <td>Checking the Switch Function</td>
+          <td>The switch indications on the touch panel and monitor 3D monitor turn blue.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">9</th>
+          <td>Check of Communication with CLV-S200-IR</td>
+          <td>When the distance from the object changes between five to 60 mm in normal light observation, the automatic brightness adjustment works.<br>Light source cable can be connected securely.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+            <th class="text-center" scope="row" >10</th>
+            <td>Checking the Release Function</td>
+            <td>The internal memory access indicator and portable memory access indicator blink in orange during image saving, and then light up in green. <br>Images saved in a portable memory can be displayed on the 3D monitor</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >11</th>
+          <td>Custom switch</td>
+          <td>Confirm that the preset switches (the remote switches and the foot switches of the endoscope) work properly as assigned.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row" >12</th>
+          <td>Checking the Operation Sound</td>
+          <td>After the power switch is turned ON and any button on the touch panel is pressed, an operation sound is heard.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >13</th>
+          <td>Appearance check</td>
+          <td>There must be no excessive scratches, dirt, or discolored appearance.<br>The step and gap between the front panel and the top cover must be 1 mm or below. The external surfaces must be free of convex/ concave that physically makes cleaning difficult.<br>There must be no irregular burr or edges in appearance. Labeling must be appropriate.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >14</th>
+          <td>Turn off the power</td>
+          <td>Press the power switch of the OTV-S200.<br>Confirm that the power of the OTV-S200 is turned off, and the power switch indicator goes out.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">15</th>
+          <td>Data Delete and Reset
+            </td>
+          <td>Delete and Reset previous data, ie user setting, saved image, patient data etc.
+          </td>
+              <td class="text-center">Pass<input type="radio" formControlName="s15_result" id="s15_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s15_result" id="s15_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

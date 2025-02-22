@@ -1,0 +1,32 @@
+.sc{
+    width:400px;
+}
+li a{
+    margin-top: 2px;
+    text-decoration: none;
+    display: flex;
+    color: black;
+    font-family: 'Geneva';
+
+}
+li{
+    list-style-type: none;
+    justify-content: start;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+li a:hover{
+    color: aliceblue;
+
+    background-color: rgb(153, 147, 172);
+    border-radius: 5px;
+}
+.cc1{
+    background-image: url('https://logos-download.com/wp-content/uploads/2016/05/Olympus_logo_logotype.png');
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+h5{
+    color:rgb(135, 135, 116);
+    font-family:'Mukta:wght@200'
+}

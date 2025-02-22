@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CLV-S40-PRO</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>Clean and disinfect the CLV-S40-PRO according to the instructions in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Power ON</td>
+            <td>・Verify that the air vents on the chassis and rear panel of the CLV-S40Pro are not clogged with dusts and/or foreign substances.<br>・Verify that the lamp cover on the left side of the CLV-S40Pro is closed completely.<br>・Press the power switch on the CLV-S40Pro with no endoscope connected.Inspect the following items:<br>・ The power indicator lights up.<br>・ The indicators on the control panel light up normally. If the indicators on the control panel blink, it is likely that the CLV-S40Pro is defective.<br>・Press the power switch to turn OFF the CLV-S40Pro.<br>・Connect an endoscope to the CLV-S40Pro and turn ON the CLV S40Pro.<br>・ Place a hand in front of the air vents on the rear panel.<br>・ Verify by feeling that the air is exhausted from the air vents.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Lamp hour indicator</td>
+            <td>Inspect the lamp according to the lamp hour indicator.<br>Replace the lamp under the following conditions:<br>- The indicator lights at “500h.”<br>- The light intensity lowers.<br>- The newly replaced lamp does not light properly</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"><br>
+                    </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Main Lamp</td>
+            <td>With the light not illuminated from the distal end, press the LAMP button.<br>・Verify that the ON indicator for the LAMP button lights up.<br>・ Verify that the light is illuminated from the distal end.<br>・Press and hold the LAMP button for one second.<br>・Verify that the light from the distal end extinguishes.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Brightness adjustment (Brightness mode selection function)</td>
+            <td>Press the AUTO/MAN. brightness button.<br>Inspect the following items:<br>・ Brightness mode switches between “AUTO” and “MAN.” with a beep sound.<br>・ The brightness mode indicator “AUTO” or “MAN.” lights up according to brightness mode setting.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Auto-brightness adjustment</td>
+            <td>Press the AUTO/MAN. brightness button to switch to “AUTO.”<br>・ Point the distal end toward an object. Move the distal end closer to the object and then away from it within a distance of 5 to 60 mm.<br>・ Verify that the brightness of the image on the monitor remains the same regardless of the distance between the object and distal end.<br>・ Hold the distal end at a distance of 30 to 40 mm from the object.<br>・ Press the brightness adjustment buttons (“  ” and “ ").<br>Inspect the following items:<br>・ When either of the brightness buttons is pressed, a beep sounds and the brightness increases or decreases. The brightness level indicator changes by one.<br>・ When either of the buttons is pressed continuously, a beep sounds and the brightness indicator changes in a continuous manner.<br>・ When either of the brightness buttons is pressed, the brightness of the endoscope image on the monitor increases or decreases accordingly.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>Manual brightness adjustment</td>
+          <td>Press the AUTO/MAN. brightness button to switch to“MAN.”<br>・ Press the brightness adjustment buttons (“ “ and “ ”).<br>Inspect the following items:<br>・ When either of the brightness buttons is pressed, a beep sounds and the brightness increases or decreases. The brightness level is indicated. <br>・ When either of the brightness adjustment buttons is pressed continuously, a beep sounds and the brightness indicator changes in a continuous manner.<br>・ The brightness of a light illuminated from the endoscope distal end increases or decreases accordingly.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>High intensity illumination mode</td>
+            <td>・Connect the endoscope to the CLV-S40Pro. The connecting endscope must support high intensity function.<br>・Press the AUTO/MAN. brightness button to switch to “MAN.”<br>・Press the brightness adjustment button (“ “ or “ ”) to set the brightness level to 0.<br>・ Connect the endoscope to the CLV-S40Pro . The connecting endoscope must support high intensity illumination mode.<br>・Press the HIGH button to set high intensity mode.<br>・ Verify that high intensity mode indicators lights up.<br>・Verify that a light emitted from the distal end becomes brighter.<br>・ Press the HIGH button to release high intensity mode.<br>・Verify that the high intensity mode button extinguishes.・Verify that the light illuminated from the distal end returns to the original illumination level.<br>・Press the HIGH button again and verify that high intensity illumination mode is set.<br>・Disconnect the endoscope from the CLV-S40Pro. Verify that the high intensity mode indicator remains lit.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >9</th>
+          <td>NBI observation function</td>
+          <td>・Connect the endoscope to the CLV-180. The connecting endoscope must support the NBI observation function.<br>・ Inspect that the MODE button illuminates and the NBI indicator lights in green.<br>・ Press the MODE button.Inspect the following items:<br>・ The color of the light illuminated from the distal end changes to blue.<br>・ The color of the NBI indicator changes to white.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >10</th>
+          <td>Power OFF</td>
+          <td>・Press the power switch on the CLV-S40Pro.<br>・ Verify that the CLV-S40Pro is turned off and the power indicator for the power switch extinguishes.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

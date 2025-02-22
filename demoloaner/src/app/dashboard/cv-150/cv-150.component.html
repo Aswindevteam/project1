@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CV-150</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>Clean and disinfect the CV-150 according to the instructions in the corresponding
+              Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+          <td>Power switch</td>
+          <td>It must be possible to turn power on and off properly.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">3</th>
+          <td>Cooling fan</td>
+          <td>The supply direction of air must be correct.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">4</th>
+          <td>Output connector</td>
+          <td>It must be possible to connect and disconnect a scope properly</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Front-panel buzzer</td>
+          <td>The LEDs corresponding to switch operations must light and a buzzer must sound at the
+            same time.</td>
+              <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"><br></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row">6</th>
+          <td>Lamp on/off</td>
+          <td>It must be possible to turn on and off the lamp.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">7</th>
+          <td>Scope detection</td>
+          <td>When the scope is disconnected, the diaphragm must be fully closed.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+          <th class="text-center" scope="row">8</th>
+          <td>Noise/vibration</td>
+          <td>When the pump is operated with the lamp on, significant noise or vibration must not occur.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">9</th>
+          <td>Interlock switch</td>
+          <td>Opening the lamp door with power on must turn off the power.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+
+        <tr>
+            <th class="text-center" scope="row" >10</th>
+            <td>Clock function and battery backup</td>
+            <td>The data settings existing before power is turned off must be backed up.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >11</th>
+          <td>Image</td>
+          <td>Images must be free from significant noise, bleeding of color, and nonuniformity of luminance.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s11_result" id="s11_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row" >12</th>
+          <td>Automatic light control</td>
+          <td>Automatic light control must function properly.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >13</th>
+          <td>Freeze function</td>
+          <td>Normal freeze operations must be possible.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >14</th>
+          <td>IRIS mode select</td>
+          <td>When IRIS mode is changed, the display status of the window must change properly.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">15</th>
+          <td>Lamp select lever position detection
+            </td>
+          <td>An error must occur when the lamp is not in the correct position
+          </td>
+              <td class="text-center">Pass<input type="radio" formControlName="s15_result" id="s15_result_pass" value="Pass">
+                  Fail<input type="radio" formControlName="s15_result" id="s15_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+          <th class="text-center" scope="row" >16</th>
+          <td>Appearance check</td>
+          <td>There must be no excessive scratches, dirt, or discolored appearance.<br>
+            The step and gap between the front panel and the top cover must be 1 mm or below. The
+            external surfaces must be free of convex/ concave that physically makes cleaning difficult.<br>
+            There must be no irregular burr or edges in appearance.
+            Labeling must be appropriate.
+            </td>
+          <td class="text-center">Pass<input type="radio" formControlName="s16_result" id="s16_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s16_result" id="s16_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >17</th>
+          <td>Turn off the power.</td>
+          <td>Press the power switch of the CV-150.<br>
+            Confirm that the power of the CV-150 is turned off, and the power switch indicator goes out.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s17_result" id="s17_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s17_result" id="s17_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >18</th>
+          <td>Data Delete and Reset</td>
+          <td>Delete and Reset previous data, ie user setting, saved image, patient data etc.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s18_result" id="s18_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s18_result" id="s18_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

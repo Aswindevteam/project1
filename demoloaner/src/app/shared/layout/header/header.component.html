@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- <p class="d-flex;" style="float:right;font-size: 10px;">{{ver}}</p>version -->
+<div class="container cc1">
+        <div class="row d-flex align-items-center justify-content-center text-center vh-100">
+          <div class="search-container container mb-5 sc">
+            <img src="../../../../assets/WhatsApp Image 2023-05-06 at 5.03.30 PM.jpeg"  alt="atlas.jpeg" style="width:150px; height:100px;">
+            <h5>Demo Loaner Inspection Sheets</h5>
+            <div class="input-group mt-4">
+
+              <input style="border-radius:25px" id="i" type="text" [formControl]="searchTerm" class="form-control" autocomplete="off" placeholder="Search...">
+            </div>
+            <div class="dropdown-container mt-2" *ngIf="filteredOptions.length > 0 && searchTerm.value !== ''">
+              <ul>
+                <li *ngFor="let option of filteredOptions" >
+                  <a [routerLink]="['/de_lo/', option]" (click)="hideDropdown()">{{ option }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+</div>
+</body>
+</html>

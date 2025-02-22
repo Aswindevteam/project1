@@ -1,0 +1,54 @@
+/* Example styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+p{
+  color: blue;
+  text-decoration: underline;
+}
+p:hover{
+  cursor: pointer;
+}
+th{
+  font-size: 10px;
+}
+h4{
+  text-align: left;
+  font-size: 12px;
+  color: grey;
+}
+select{
+  display: flex;
+  justify-content: center;
+}
+td{
+  font-size: 8px;
+}
+h2{
+  font-size: 14px;
+}
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit{
+  background-color: #5173af;
+}
+/* input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Demoloaner</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+</head>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // const firebaseConfig = {
+  //   apiKey: "AIzaSyBlbZSvlT24kDfeNh8DN2VjS-ChSKV6ENI",
+  //   authDomain: "demoloaner-inspection-sheets.firebaseapp.com",
+  //   projectId: "demoloaner-inspection-sheets",
+  //   storageBucket: "demoloaner-inspection-sheets.appspot.com",
+  //   messagingSenderId: "26046180989",
+  //   appId: "1:26046180989:web:f9ca8a0d56558120aacb14",
+  //   measurementId: "G-HX7D7584EX"
+  // };
+  const firebaseConfig = {
+  apiKey: "AIzaSyBlbZSvlT24kDfeNh8DN2VjS-ChSKV6ENI",
+  authDomain: "demoloaner-inspection-sheets.firebaseapp.com",
+  projectId: "demoloaner-inspection-sheets",
+  storageBucket: "demoloaner-inspection-sheets.firebasestorage.app",
+  messagingSenderId: "26046180989",
+  appId: "1:26046180989:web:9baa38b0d8f17f8aaacb14",
+  measurementId: "G-EQFL2S1XHG"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CH-S200-XZ-EB-E</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>Clean and disinfect the CH-S200-XZ-EB-E according to the instructions in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Inspection of the camera head</td>
+            <td>Confirm that the camera head does not have the following damages.<br>Surface of the camera head’s main body is free from cracks, burrs, or other damages.<br>Camera cable is free from sagging, swelling, scratches, or holes.<br>Electrical contacts of the video connector are free from bends or rust.<br>Make sure that the equipment is completely dry before use. <br>Wipe the video connector,including the electrical contacts using clean lint-free cloths. Also confirm that the electrical contacts are completely dry and clean.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Connection to thecamera control unit</td>
+            <td>If any ancillary equipment is ON, turn it OFF.<br>Confirm that the video connector, including electrical contacts and optical connectingpart, is dry and clean.<br>Make sure that the UP mark on the video connector is facing up.<br>Hold the camera control unit stationary with one hand. With the other hand, push the video connector into the video connector socket until it clicks.Confirm that the video connector is securely attached by pulling it gently</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"><br>
+                    </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Connection to the endoscope</td>
+            <td>Hold the camera head.<br>Attach the endoscope’s eyepiece to the endoscope mount while rotating the endoscope lock ring in the direction of the arrow.<br>Release the endoscope lock ring to secure the eyepiece in the specified position.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Inspection of the endoscopic image</td>
+            <td>Turn ON the camera control unit, the light source,and the monitor.<br>Observe the palm of your hand in the WLI and NBI endoscopic images.<br>Confirm that the illumination light is emitted and that the WLI and NBI endoscopic images are free from noise, blur, fog, or other irregularities.<br>Shake the camera cable and confirm that the endoscopic image does not momentarily disappear, flicker, or display any other irregularities.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Inspection of the remote switches</td>
+            <td>Depress every remote switch and confirm that the specified functions work normally</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>Focus switch/Zoom switch check</td>
+          <td>The focus and zoom can be adjusted.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>Endoscopic image check</td>
+            <td>When you observe your palm in the normal light observation image and NBI observation image, the brightness adjustment should function properly, and colors should be rendered correctly. Also, there should be no abnormalities such as noise, blurriness, fogginess, dust, brightness, or defective pixels that may adversely affect endoscopic observation. There should occur no abnormalities such as a momentary disappearance of normal light observation image or the NBI observation image, or noise occurrence when you shake the camera cable while viewing a normal light observation image. There should occur no noise on the monitor that may adversely affect the actual use when you conduct visual inspection by operating the remote switches (1, 2, 3) with a normal light observation image. There should occur no noise on the monitor that may adversely affect the actual use when you conduct visual inspection by rotating the focus ring while viewing a normal light observation image.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >9</th>
+          <td>Appearance check</td>
+          <td>No significant damages, deformations, smudges, burrs, or edges are observed on the appearance.<br>No rust or corrosion should be observed on the electrical contacts of the video connector. Labeling should be properly provided.<br>* Repair of damages, deformations, and smudges is recommended if the specimen passes other inspection items.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

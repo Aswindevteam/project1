@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >EU-ME3</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning/disinfection</td>
+            <td>Clean and disinfect the EU-ME3 according to the instructions described in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Connection with the ultrasound endoscope/ultrasound cable or the probe driving unit</td>
+            <td>a. Check that the ACTIVE lamp is off.<br>b. Follow the instructions in the ultrasound endoscopes instruction manual, and align the ultrasound endoscope or the ultrasound connector of the ultrasound connectioncable with the icon on the Ultrasound Center, and push it in until it contacts SOCKET2.<br>c. Turn the lever in the clockwise direction. Once the lever cannot move any further, the connection is complete.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Connection with the ultrasound endoscope/ultrasound cable or the probe driving unit (Connection with the probe driving unit)</td>
+            <td>a. Check that the ACTIVE lamp is off.<br>b. Align the ultrasound connector of the probe driving unit with the icon on the Ultrasound Center, and push it in until it contacts SOCKET1.<br>c. Turn the lever in the clockwise direction. Once the lever cannot move any further, the connection is complete.</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail">
+                   </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Inspection of the power supply</td>
+            <td>a. Check that the ventilation grills on the rear panel and sides of the Ultrasound Center are not blocked by dust or other foreign objects.<br>b. Connect the ultrasound endoscope or probe driving unit to the Ultrasound Center.<br>c. Press the power switch of the Ultrasound Center.<br>d. Confirm that the power indicator is lit.<br>e. After about one minute, check that the buzzer sounds twice.<br>f. From the front panel side, hold your hand over the left ventilation grills to check that air is being discharged.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">5</th>
+          <td>Connection with portable memory</td>
+          <td>a. With the “OLYMPUS” logo on the portable memory facing up, push the portable memory into the portable memory port until it cannot go any further.<br>b. The Ultrasound Center recognizes the portable memory, and the access indicator turns on. The access indicator and LED on the portable memory indicate the following states.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+      </tr>
+        <tr>
+            <th class="text-center" scope="row">6</th>
+            <td>Inspection of the monitor</td>
+            <td>Confirm that the endoscopic image or ultrasound endoscopic image is displayed on the monitor.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >7</th>
+            <td>Check of displayed information on monitor</td>
+            <td>a. When the power of the Ultrasound Center is turned on, a monitor display appears on the monitor.<br>b. Check that the date and time are displayed correctly.<br>c. If an endoscopic image file device is connected by passing through the video system center, check that “DF” is being displayed.<br>d. If images will be stored in the internal memory of the Ultrasound Center, check that there is enough available space in the MEDIA indicator.<br>e. Check that displayed user settings are same as those the operator uses.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >8</th>
+          <td>Inspection of the ultrasound images (Inspection of the B mode image)</td>
+          <td>a. Press the FREEZE key to make the ultrasound image live, and make sure that the ultrasound image is displayed on the monitor display.<br>b. Pressing the FREEZE key again will freeze the ultrasound image. Check that the frame number appears at the bottom right.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">9</th>
+            <td>Inspection of the FLOW mode image</td>
+            <td>a. Perform Step 1 in “Inspection of the B mode B14image” on page 10.<br>b. Press the F key.<br>c. Press the COLOR button in the FLOW MODE section on the touch panel to set to COLOR FLOW mode.<br>d. Press the [+] key for adjust key 1 to maximize the FLOW again.<br>e. Check that the interior of the ROI appears blue and red.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">10</th>
+            <td>Inspection of the POWER FLOW mode image</td>
+            <td>a. Perform Step 1 and 2 in “Inspection of the COLOR FLOW mode image.<br>b. Press the POWER button in the FLOW MODE section on the touch panel to set to POWER FLOW mode.<br>c. Press the [+] key for adjust key 1 to maximize the FLOW gain.<br>d. Check that the interior of the ROI appears red.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s10_result" id="s10_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s10_result" id="s10_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">11</th>
+            <td>Inspection of the H-FLOW mode image</td>
+            <td>a. Perform Step 1 and 2 in “Inspection of the COLOR FLOW mode image.<br>b. Press the H-FLOW button in the FLOW MODE section on the touch panel to set to HFLOW mode.<br>c. Press the [+] key for adjust key 1 to maximize the FLOW gain.<br>d. Check that the interior of the ROI appears bright blue and bright red.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s11_result" id="s11_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s11_result" id="s11_result_fail"  value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">12</th>
+          <td>Inspection of the PW mode image</td>
+          <td>a. Perform Step 1 in “Inspection of the B mode image.<br>b. Press the PW key on the keyboard.<br>C. Make sure that the PW cursor and sample volume are displayed on the left half of the monitor.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s12_result" id="s12_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s12_result" id="s12_result_fail" value="Fail"></td>
+      </tr>
+      <tr>
+          <th class="text-center" scope="row">13</th>
+          <td>Inspection of the CHE mode image</td>
+          <td>a. Perform Step 1 in “Inspection of the B mode image.<br>b. Press the CHE key<br>c. Check that the CHE MAIN tab appears on the touch panel.<br>d. Check that the mode name (CHE-P, CHE-R, or C THE) for the CHE mode button that is lit on the touch panel appears on the monitor display</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s13_result" id="s13_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s13_result" id="s13_result_fail"  value="Fail"></td>
+      </tr>
+      <tr>
+        <th class="text-center" scope="row">14</th>
+        <td>Inspection of the ELST mode image</td>
+        <td>a. Perform Step 1 in “Inspection of the B mode image.<br>b. Press the ELST key on the keyboard.<br>c. Check that the ELST MAIN tab appears on the touch panel of the keyboard.<br>d. Check that the mode name appears on the monitor display.</td>
+        <td class="text-center">Pass<input type="radio" formControlName="s14_result" id="s14_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s14_result" id="s14_result_fail"  value="Fail"></td>
+    </tr>
+    <tr>
+      <th class="text-center" scope="row">15</th>
+      <td>Inspection of release</td>
+      <td>a. Perform Step 1 in “Inspection of the B mode image.<br>b. Press the RELEASE key to output the still image on the monitor display to ancillary equipment (video printer, video system center).<br>c. When you hear a beeping sound, check that the ultrasound image temporarily freezes and then returns to live.<br>d. Check that the storage count for the video system center and the counters displayed on the endoscopic image file device and other equipment on the monitor increase.</td>
+      <td class="text-center">Pass<input type="radio" formControlName="s15_result" id="s15_result_pass" value="Pass">
+          Fail<input type="radio" formControlName="s15_result" id="s15_result_fail"  value="Fail"></td>
+  </tr>
+  <tr>
+    <th class="text-center" scope="row">16</th>
+    <td>Inspection of the video system center</td>
+    <td>When combining with the video system center for use, conduct the following inspection.<br>a. Turn on the power for the Ultrasound Center and the video system center.<br>b. Press the VIDEO SOURCE key to set to EVIS mode. Check that the product code of the connected video system center appears on the touch panel on the keyboard.</td>
+    <td class="text-center">Pass<input type="radio" formControlName="s16_result" id="s16_result_pass" value="Pass">
+        Fail<input type="radio" formControlName="s16_result" id="s16_result_fail"  value="Fail"></td>
+</tr>
+<tr>
+  <th class="text-center" scope="row">17</th>
+  <td>Power off</td>
+  <td>a. If the Ultrasound Center will not be used for a while, press the power switch on the front panel to turn it off.<br>b. Confirm that the Ultrasound Center is turned off and the power indicator is off.</td>
+  <td class="text-center">Pass<input type="radio" formControlName="s17_result" id="s17_result_pass" value="Pass">
+      Fail<input type="radio" formControlName="s17_result" id="s17_result_fail"  value="Fail"></td>
+</tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>

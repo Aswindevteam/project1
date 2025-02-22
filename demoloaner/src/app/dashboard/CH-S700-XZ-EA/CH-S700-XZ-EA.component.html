@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="mt-5 mx-5">
+  <form [formGroup]="formGroup" id="table">
+    <div class="text-center mb-5 mt-5 mx-5">
+      <h2 >CH-S700-XZ-EA</h2>
+    </div>
+    <table class="table table-border">
+      <thead class="text-center">
+        <tr>
+          <th scope="col" >DEMO/LOANER:</th>
+          <td scope="col" ><select style="border-radius: 10px; width: 140px;" formControlName="delo" default="select"><option value="Demo">Demo</option><option value="Loaner">Loaner</option></select></td>
+          <th scope="col" >SERIAL NUMBER:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="sn_o" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <th scope="col" >CDS DATE:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="date" formControlName="cds_date" autocomplete="off"></td>
+          <th scope="col" >CDS DONE BY:</th>
+          <td scope="col" ><input style="border-radius: 10px;" type="text" formControlName="cds_by" autocomplete="off"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">INSPECTION ITEM</th>
+          <th scope="col">INSPECTION STANDARD</th>
+          <th scope="col">INSPECTION RESULT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center" scope="row">1</th>
+            <td>Cleaning & Disinfection</td>
+            <td>Clean and disinfect the CH-S200-XZ-EB-E according to the instructions in the corresponding Instructions Manual.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s1_result" id="s1_result_pass" value="Pass">
+            Fail<input type="radio" formControlName="s1_result" id="s1_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row">2</th>
+            <td>Inspection of the camera head</td>
+            <td>1.Confirm that the camera head does not have the following damage.<br>- The surface of the camera head part is free from cracks, burrs, or other damage.<br>- The camera cable is free from sagging, swelling, scratches, or holes.<br>- The surface of the video connector is free from cracks or burrs. The electrical contacts and optical connecting part of the video connector are free from bends or rust.<br>2. To remove dust, dirt, and other non-patient debris, use sterile lint-free cloths.<br>3. Make sure that the equipment is completely dry before use. Wipe the video connector, including the electrical contacts and optical connecting part, using clean lintfree cloths. Also, confirm that the electrical contacts and optical connecting part are completely dry and clean.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s2_result" id="s2_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s2_result" id="s2_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">3</th>
+            <td>Connection to thecamera control unit</td>
+            <td>If any ancillary equipment is ON, turn it OFF.<br>Confirm that the video connector, including electrical contacts and optical connectingpart, is dry and clean.<br>Make sure that the UP mark on the video connector is facing up.<br>Hold the camera control unit stationary with one hand. With the other hand, push the video connector into the video connector socket until it clicks.Confirm that the video connector is securely attached by pulling it gently</td>
+                <td class="text-center">Pass<input type="radio" formControlName="s3_result" id="s3_result_pass" value="Pass">
+                    Fail<input type="radio" formControlName="s3_result" id="s3_result_fail" value="Fail"><br>
+                    </td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">4</th>
+            <td>Connection to the endoscope</td>
+            <td>Hold the camera head.<br>Attach the endoscope’s eyepiece to the endoscope mount while rotating the endoscope lock ring in the direction of the arrow.<br>Release the endoscope lock ring to secure the eyepiece in the specified position.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s4_result" id="s4_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s4_result" id="s4_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">5</th>
+            <td>Inspection of the endoscopic image</td>
+            <td>1. Turn ON the video system center, the light source and the monitor.<br>2. Observe the palm of your hand in the WLI endoscopic images.<br>3. Confirm that the illuminating light is emitted and adjust the amount of light to the appropriate amount.<br>4. Confirm that the WLI endoscopic images are free from noise, blur, fog, or other irregularities.<br>5. Shake the camera cable and confirm that the WLI endoscopic image do not momentarily disappear, flicker, or display any other irregularities.<br>6. Perform image inspection for the NBI endoscopic image and the IR endoscopic image as well.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s5_result" id="s5_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s5_result" id="s5_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row" >6</th>
+            <td>Inspection of the remote switches</td>
+            <td>Depress every remote switch and confirm that the specified functions work normally</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s6_result" id="s6_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s6_result" id="s6_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >7</th>
+          <td>Inspection of the one touch auto focus</td>
+          <td>1. Observe the palm of your hand.<br>2. Move the distal end of the endoscope closer to your palm and press the one touch/continuous auto focus switch for less than a second (<1s).<br>3. Confirm that the following icon is displayed at the upper right of the endoscopic image on the monitor and the endoscopic image is automatically adjusted to the most appropriate focus.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s7_result" id="s7_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s7_result" id="s7_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+            <th class="text-center" scope="row">8</th>
+            <td>Inspection of the continuous auto focus</td>
+            <td>1. Observe the palm of your hand. <br>2. Move the distal end of the endoscope closer to your palm and press the one touch/continuous auto focus switch for more than a second (≥1s).<br>3. Confirm that the following icon is displayed at the upper right of the endoscopic image on the monitor and the endoscopic image is automatically adjusted to the most appropriate focus.<br>4. Move the distal end of the endoscope farther from your palm. Confirm that the endoscopic image will be adjusted to the most appropriate focus even though the distance between your palm and the distal end of the endoscope changes.</td>
+            <td class="text-center">Pass<input type="radio" formControlName="s8_result" id="s8_result_pass" value="Pass">
+                Fail<input type="radio" formControlName="s8_result" id="s8_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th class="text-center" scope="row" >9</th>
+          <td>Inspection of the manual focus</td>
+          <td>1. Observe the palm of your hand.<br>2. Press the manual focus switch. Confirm that the endoscopic image on the monitor can be manually adjusted so that the image may become sharpest.</td>
+          <td class="text-center">Pass<input type="radio" formControlName="s9_result" id="s9_result_pass" value="Pass">
+              Fail<input type="radio" formControlName="s9_result" id="s9_result_fail" value="Fail"></td>
+        </tr>
+        <tr>
+          <th scope="row"><b>REMARKS:</b></th>
+          <td colspan="4">
+              <textarea style="width:99%;resize: none;" formControlName="remarks" ></textarea>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th scope="col" id="ib">INSPECTD BY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row" id="ib_d"><input style="border-radius: 10px;" type="text" autocomplete="off" formControlName="insBy"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-5">
+    <div id="image">
+    </div>
+    <button id="btn" class="btn btn-success mt-2" type="submit" style="width:120px" (click)="download()"><span></span> Download</button>
+  </div>
+</form>
+</body>
+</html>
