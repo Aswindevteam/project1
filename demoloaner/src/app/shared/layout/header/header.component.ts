@@ -112,10 +112,11 @@ export class HeaderComponent {
     "MAF-GM",
     "MAF-TM", //50
     "OBCU",
+    "MAF-DM2",
     "OEV-191",
     "OEV-191H",
     "OEV-261H",
-    "OEV-262H",
+    "OEV-262H", 
     "OEV-321UH",
     "OFP-2",
     "EU-ME2 PREMIER PLUS",
@@ -234,7 +235,7 @@ export class HeaderComponent {
 
   constructor(private router: Router, private fb: FormBuilder) {
     // this.ver=this.version.myMethod();
-    console.log("****************")
+    console.log("********new changes********")
     this.searchTerm.valueChanges
       .pipe(
         debounceTime(300) // debounce for 300ms before calling filterOptions()

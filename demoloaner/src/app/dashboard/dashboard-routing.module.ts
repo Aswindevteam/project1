@@ -229,6 +229,7 @@ const routes: Routes = [
   {path:'CH-S200-08-LB',loadComponent:()=>import('./CH-S200-08-LB/CH-S200-08-LB.component').then(m => m.Chs20008lbComponent)},//new format 9
   {path:'PCF-H190TL',loadComponent:()=>import('./pcf-h190-tl/pcf-h190-tl.component').then(m => m.PCFH190TLComponent)},
   {path:'ENF-V4',loadComponent:()=>import('./enf-v4/enf-v4.component').then(m => m.ENFV4Component)},//new format 9
+  {path:'MAF-DM2',loadComponent:()=>import('./maf-dm2/maf-dm2.component').then(m => m.MaftmComponent)},//new format 9
 
   ]}
 
