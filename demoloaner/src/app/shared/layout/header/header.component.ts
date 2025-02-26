@@ -113,6 +113,8 @@ export class HeaderComponent {
     "MAF-TM", //50
     "OBCU",
     "MAF-DM2",
+    "MAF-GM2",
+    "MAF-TM2",
     "OEV-191",
     "OEV-191H",
     "OEV-261H",
